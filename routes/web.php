@@ -31,8 +31,7 @@ Route::get('/about', function () {
     ]);
 });
 
+// Halaman Articles
 Route::get('/posts', [ArticleController::class, 'index']);
-
-
-// Halaman Single Article/Post
-Route::get('posts/{slug}', [ArticleController::class, 'show']);
+// Halaman Single Articles/Post
+Route::get('posts/{articles:slug}', [ArticleController::class, 'show']);

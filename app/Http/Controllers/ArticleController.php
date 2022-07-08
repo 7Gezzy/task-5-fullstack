@@ -15,11 +15,11 @@ class ArticleController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Articles $articles)
     {
         return view('post', [
             'title' => 'Single Post',
-            'post' => Articles::find($slug)
+            'post' => $articles
         ]);
     }
 }
