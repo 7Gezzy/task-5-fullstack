@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('excerpt');
             $table->text('content');
             $table->foreignId('category_id');
+            $table->foreignId('user_id');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

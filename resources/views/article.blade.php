@@ -2,13 +2,19 @@
 
 @section('container')
 <body style="font-family: roboto">
-    <article>
-        <h3>{{ $article->title }}</h3>
-
-        <p class="pt-2">By. George in <a href="/categories/{{ $article->category->slug }}" style="text-decoration: none">{{ $article->category->name }}</a></p>
-
-        {!! $article->content !!}
+    <article class="border-bottom pb-2">
+    <h3 class="mb-4 mt-2">
+        {{ $article->title }}
+    </h3>
+     <p class="pb-0 pt-1 mb-1" style="font-weight: 500; font-size: 14pt;">By.
+        <a href="#" style="font-weight: 500; text-decoration: none; font-size: 14pt;">{{ $article->user->name }} </a>
+        <a>in</a>
+        <a href="/categories/{{ $article->category->slug }}" style="text-decoration: none; font-size: 14pt;">{{ $article->category->name }}</a>
+     </p>
+     <p class="pb-0" style="font-size: 12pt;">{!! $article->content !!}</p>
     </article>
-    <a href="/articles" style="text-decoration: none">Back to Articles</a>
+    <article class="pt-2">
+        <a href="/articles" style="text-decoration: none">Back to Articles</a>
+    </article>
 </body>
 @endsection

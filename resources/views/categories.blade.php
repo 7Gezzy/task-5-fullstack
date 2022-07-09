@@ -13,7 +13,9 @@
             </li>
         </ul>
     @endforeach
-    <a href="/articles" style="text-decoration: none">Back to Articles</a>
+        <article class="pt-4">
+            <a href="/articles" style="text-decoration: none">Back to Articles</a>
+        </article>
 </body>
 
 @endsection
