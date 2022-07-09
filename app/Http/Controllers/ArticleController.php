@@ -9,17 +9,17 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view('posts', [
+        return view('articles', [
             'title' => 'Blog',
-            'posts' => Articles::all()
+            'articles' => Articles::all()
         ]);
     }
 
     public function show(Articles $articles)
     {
-        return view('post', [
-            'title' => 'Single Post',
-            'post' => $articles
+        return view('article', [
+            'title' => 'Single Article',
+            'article' => $articles
         ]);
     }
 }

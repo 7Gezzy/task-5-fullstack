@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Articles;
+use App\Models\Category;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,22 @@ Route::get('/about', function () {
     ]);
 });
 
+// Halaman Category
+Route::get('/category', function () {
+    return view('categories', [
+        'title' => 'Articles Categories',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('category', [
+        'title' => $category->name,
+        'articles' => $category->articles,
+        'category' => $category->name,
+    ]);
+});
 // Halaman Articles
-Route::get('/posts', [ArticleController::class, 'index']);
+Route::get('/articles', [ArticleController::class, 'index']);
 // Halaman Single Articles/Post
-Route::get('posts/{articles:slug}', [ArticleController::class, 'show']);
+Route::get('articles/{articles:slug}', [ArticleController::class, 'show']);
