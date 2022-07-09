@@ -33,7 +33,7 @@ Route::get('/about', function () {
 });
 
 // Halaman Category
-Route::get('/category', function () {
+Route::get('/categories', function () {
     return view('categories', [
         'title' => 'Articles Categories',
         'categories' => Category::all()

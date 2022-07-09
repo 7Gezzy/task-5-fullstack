@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 style="font-family: sans-serif">Home</h1>
+<body style="font-family: roboto">
+    <h1>Home</h1>
+</body>
 @endsection

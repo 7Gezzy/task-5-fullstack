@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
+<body style="font-family: roboto">
     <article>
         <h3>{{ $article->title }}</h3>
 
@@ -9,4 +10,5 @@
         {!! $article->content !!}
     </article>
     <a href="/articles" style="text-decoration: none">Back to Articles</a>
+</body>
 @endsection

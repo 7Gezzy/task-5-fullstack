@@ -15,7 +15,7 @@
     <!-- Komponen Patials Nav  -->
     @include('partials.navbar')
 
-    <div class="container mt-4">
+    <div class="container mt-4 mb-4">
         @yield('container')
     </div>
 

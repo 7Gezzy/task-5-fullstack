@@ -1,7 +1,8 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">Articles Category : {{ $category }}</h1>
+<body style="font-family: roboto">
+    <h1 class="mb-4">Articles Category : {{ $category }}</h1>
 
     @foreach ($articles as $article)
         <article class="mb-3">
@@ -10,8 +11,8 @@
           </h5>
           <p>{!! $article->excerpt !!}</p>
         </article>
-
     @endforeach
 
-    <a href="/articles" style="text-decoration: none">Back to Articles</a>
+    <a href="/categories" style="text-decoration: none">Back to Categories</a>
+</body>
 @endsection
