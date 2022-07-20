@@ -3,6 +3,7 @@
 use App\Models\Post;
 use App\Models\Articles;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 
@@ -47,7 +48,17 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         'category' => $category->name,
     ]);
 });
+
+// Halaman Author
+Route::get('/authors/{user}', function (User $user){
+    return view('articles', [
+        'title' => 'User Articles',
+        'articles' => $user->articles,
+     ]);
+});
+
 // Halaman Articles
 Route::get('/articles', [ArticleController::class, 'index']);
+
 // Halaman Single Articles/Post
 Route::get('articles/{articles:slug}', [ArticleController::class, 'show']);

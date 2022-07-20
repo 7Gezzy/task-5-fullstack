@@ -2,7 +2,7 @@
 
 @section('container')
 <body style="font-family: roboto">
-    <h1 class="mb-4">Articles</h1>
+    <h2 class="mb-4">Articles</h2>
 
     @foreach ($articles as $article)
         <article class="border-bottom pb-2" >
@@ -10,7 +10,7 @@
             <a href="/articles/{{ $article->slug }}" style="text-decoration: none">{{ $article->title }}</a>
           </h5>
           <p class="mb-0" style="font-weight: 500">By.
-            <a href="#" style="font-weight: 500; text-decoration: none;">{{ $article->user->name }} </a>
+            <a href="/authors/{{ $article->user->id }}" style="font-weight: 500; text-decoration: none;">{{ $article->user->name }} </a>
             <a>in</a>
             <a href="/categories/{{ $article->category->slug }}" style="text-decoration: none">{{ $article->category->name }}</a>
           </p>

@@ -2,15 +2,19 @@
 
 @section('container')
 <body style="font-family: roboto">
-    <h1 class="mb-4">Articles Category : {{ $category }}</h1>
+    <h2 class="mb-4">Articles Category : {{ $category }}</h2>
 
     @foreach ($articles as $article)
-        <article class="mb-3">
-          <h4>
+        <article class="border-bottom pb-2" >
+          <h5 class="mb-2 mt-2">
             <a href="/articles/{{ $article->slug }}" style="text-decoration: none">{{ $article->title }}</a>
-          </h4>
-          <p class="mb-0" style="font-weight: 500">By. George in <a href="/categories/{{ $article->category->slug }}" style="text-decoration: none">{{ $article->category->name }}</a></p>
-          <p>{!! $article->excerpt !!}</p>
+          </h5>
+          <p class="mb-0" style="font-weight: 500">By.
+            <a href="#" style="font-weight: 500; text-decoration: none;">{{ $article->user->name }} </a>
+            <a>in</a>
+            <a href="/categories/{{ $article->category->slug }}" style="text-decoration: none">{{ $article->category->name }}</a>
+          </p>
+          <p class="pb-0" style="font-size: 11pt;">{!! $article->excerpt !!}</p>
         </article>
     @endforeach
         <article class="pt-2">
