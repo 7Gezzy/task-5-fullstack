@@ -50,7 +50,7 @@ Route::get('/categories/{category:slug}', function (Category $category) {
 });
 
 // Halaman Author
-Route::get('/authors/{user}', function (User $user){
+Route::get('/authors/{user:username}', function (User $user){
     return view('articles', [
         'title' => 'User Articles',
         'articles' => $user->articles,
